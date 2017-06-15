@@ -1,1 +1,1 @@
-# DukeTIP
+Python Hangman
