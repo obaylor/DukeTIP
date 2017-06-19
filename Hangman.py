@@ -46,13 +46,12 @@ def printBlanks(word, correctLetters):
     print()
     return solved
 
-word_list = ["test", "something", "it"]# Define a list of words as options
+word_list = ["test", "something"]# Define a list of words as options
 
 
 correctLetters = [ ]# Define a list to hold the correctly guessed letters
 
 incorrectGuesses = 0# Define a variable to count the number of incorrect guesses
-
 
 word = numpy.random.choice(word_list)# Pick a random word to be used
 
@@ -64,11 +63,11 @@ while True:
     solved = printBlanks(word, correctLetters)  # Replace False with a function call
 
     if incorrectGuesses >= 6:
-        print ("You Lose")# Catch Death (Exit loop if they got 6 or more wrong)
+        print ("You Lose!")# Catch Death (Exit loop if they got 6 or more wrong)
         break
 
     if solved:
-        print('You win!')
+        print('You win!:)')
         break  # no need to guess again
 
     user_input = ""
