@@ -9,7 +9,7 @@ def findSimilar(iLike, userLikes):
     # Create an And similarity
     similarityAnd = 0 # replace 0 with the correct code
     # Create a per user sum
-    similaritySum = 0 # replace 0 with the correct code
+    similarityAndSum = 0 # replace 0 with the correct code
     # Create an Or similarity
     userSimilarityOr = 0 # replace 0 with the correct code
     
@@ -41,7 +41,7 @@ def processLikes(iLike):
     # Convert iLike into an array of 0's and 1's which matches the array for other users
     # It should have one column for each movie (just like the userLikes array)
     # Start with all zeros, then fill in a 1 for each movie the user likes
-    iLikeNp = 0 # replace 0 with the code to make the array of zeros
+    ilikeNp = 0    # replace 0 with the code to make the array of zeros
     # You'll need a few more lines of code to fill in the 1's as needed
 
     # Find the most similar user
@@ -104,8 +104,8 @@ for key in movieRatingTemp:
     movieRating[key] = np.mean(movieRatingTemp[key])
     movieRatingCount[key] = len(movieRatingTemp[key])
 
-print (movieRating)
-print (movieRatingCount)
+#print (movieRating)
+#print (movieRatingCount)
 # Using numpy place the average rating for each movie in movieRating and the total number of ratings in movieRatingCount
 # Note: You will need a for loop to get each dictionary key
 
@@ -114,7 +114,7 @@ print (movieRatingCount)
 # https://www.saltycrane.com/blog/2007/09/how-to-sort-python-dictionary-by-keys/
 movieRatingS = sorted(movieRating.iteritems(), key=lambda (k,v): (v,k), reverse=True)
 
-print (movieRatingS)
+#print (movieRatingS)
 # Top 10 Movies
 print("Top Ten Movies:")
 print ("")
@@ -125,7 +125,7 @@ for i in range (0, 10):
     print ("Movie Id: " + str(movieRatingS[i][0]) + " Rating: "+
         str(movieRatingS[i][1]) + " " + movieDict[movieRatingS[i][0]] +
         " Count: " + str(movieRatingCount[movieRatingS[i][0]]))
-print (movieRatingS[0][0])
+#print (movieRatingS[0][0])
 
 # Top 10 Movies with at least 100 ratings
 print("\n\nTop Ten movies with at least 100 ratings:")
@@ -144,7 +144,7 @@ while moviesPrinted < 10:
                ", Number of Ratings: "+str(movieRatingCount[key]))
         moviesPrinted +=1
     i += 1
-exit(0) # Remove this line after we finish phase 2
+#exit(0) # Remove this line after we finish phase 2
 
 ########################################################
 # Begin Phase 3
@@ -155,10 +155,10 @@ exit(0) # Remove this line after we finish phase 2
 # Create a numpy ndarray of zeros with demensions of max user id + 1 and max movie + 1 (because we'll use them as 1 indexed not zero indexed)
 
 # Find the max movie ID + 1
-maxMovie = 0 # replace 0 with the correct code
+maxMovie = movieData['movie'].max() + 1# replace 0 with the correct code
 
 # Find the max user Id + 1
-maxUser = 0 # replace 0 with the correct code
+maxUser = movieData['user'].max() + 1 # replace 0 with the correct code
 
 # Create an array of 0s which will fill in with 1s when a user likes a movie
 userLikes = np.zeros((maxUser, maxMovie))
@@ -166,7 +166,8 @@ userLikes = np.zeros((maxUser, maxMovie))
 # Go through all the rows of the movie data.
 # If the user rated a movie as 4 or 5 set userLikes to 1 for that user and movie
 # Note: You'll need a for loop and an if statement
-
+for maxUser in userLikes:
+    if
 
 ########################################################
 # At this point, go back up to the top and fill in the
