@@ -21,8 +21,13 @@ def findSimilar(iLike, userLikes):
     # You can "get rid" of a user that is most similar, but doesn't have any new likes
     # by setting the userSimilarity for them to 0
     # When you get the index, save it in the variable maxIndex
-    while  :
-
+    while True:
+        maxIndex = userSimilarity.argmax()
+        maxLikes= userLikes[maxIndex] - iLike
+        if  len(maxLikes[maxLikes > 0]) > 0:
+            break
+        else:
+            userSimilarity[maxIndex] = 0
     # Print the max similarity number (most times this is something like 0.17
     print (userSimilarity)
     # Return the index of the user which is the best match
@@ -59,8 +64,8 @@ def processLikes(iLike):
     print(recLikes.flatten())
     # For each item the similar user likes that the person didn't already say they liked
     # print the movie name using printMovie (you'll also need a for loop and an if statement)
-for:
-    if:
+for  :
+    if  :
         print(printMovie)
 ########################################################
 # Begin Phase 1
